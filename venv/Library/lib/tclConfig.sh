@@ -15,21 +15,21 @@ TCL_DLL_FILE="tcl86t.dll"
 TCL_VERSION='8.6'
 TCL_MAJOR_VERSION='8'
 TCL_MINOR_VERSION='6'
-TCL_PATCH_LEVEL='8.6.12'
+TCL_PATCH_LEVEL='8.6.13'
 
 # C compiler to use for compilation.
 TCL_CC='cl.exe'
 
 # -D flags for use with the C compiler.
-TCL_DEFS='-nologo -c /D_ATL_XP_TARGETING  -W3 -wd4311 -wd4312 -FpC:\ci\tk_1654036608655\work\tcl8.6.12\win\Release_AMD64_VC1916\tcl_ThreadedDynamic\  -fp:strict -O2 -GS -GL -MD -I"C:\ci\tk_1654036608655\work\tcl8.6.12\win\..\win" -I"C:\ci\tk_1654036608655\work\tcl8.6.12\win\..\generic"  -I"C:\ci\tk_1654036608655\work\tcl8.6.12\win\..\libtommath"  /DTCL_TOMMATH /DMP_PREC=4 /Dinline=__inline /DHAVE_ZLIB=1 /D_CRT_SECURE_NO_DEPRECATE /D_CRT_NONSTDC_NO_DEPRECATE /DMP_FIXED_CUTOFFS /DSTDC_HEADERS /DUSE_NMAKE=1 /DHAVE_STDINT_H=1 /DHAVE_INTTYPES_H=1 /DHAVE_STDBOOL_H=1 /DTCL_THREADS=1 /DUSE_THREAD_ALLOC=1 /DNDEBUG /DTCL_CFG_OPTIMIZED /DTCL_CFG_DO64BIT   /DBUILD_tcl'
+TCL_DEFS='-nologo -c /D_ATL_XP_TARGETING  /DHAVE_CPUID=1 -W3 -wd4090 -wd4146 -wd4311 -wd4312 -FpD:\bld\tk_1699201897784\work\tcl8.6.13\win\Release_AMD64_VC1929\tcl_ThreadedDynamic\  -fp:strict -O2 -GS -GL -MD -I"D:\bld\tk_1699201897784\work\tcl8.6.13\win\..\win" -I"D:\bld\tk_1699201897784\work\tcl8.6.13\win\..\generic"  -I"D:\bld\tk_1699201897784\work\tcl8.6.13\win\..\libtommath"  /DTCL_TOMMATH /DMP_PREC=4 /Dinline=__inline /DHAVE_ZLIB=1 /D_CRT_SECURE_NO_DEPRECATE /D_CRT_NONSTDC_NO_DEPRECATE /DMP_FIXED_CUTOFFS /DSTDC_HEADERS /DUSE_NMAKE=1 /DHAVE_STDINT_H=1 /DHAVE_INTTYPES_H=1 /DHAVE_STDBOOL_H=1 /DTCL_THREADS=1 /DUSE_THREAD_ALLOC=1 /DNDEBUG /DTCL_CFG_OPTIMIZED /DTCL_CFG_DO64BIT   /DBUILD_tcl'
 
 # If TCL was built with debugging symbols, generated libraries contain
 # this string at the end of the library name (before the extension).
 TCL_DBGX=t
 
 # Default flags used in an optimized and debuggable build, respectively.
-TCL_CFLAGS_DEBUG='-nologo -c -W3 -YX -FpC:\ci\tk_1654036608655\work\tcl8.6.12\win\Release_AMD64_VC1916\tcl_ThreadedDynamic\ -MDd'
-TCL_CFLAGS_OPTIMIZE='-nologo -c -W3 -YX -FpC:\ci\tk_1654036608655\work\tcl8.6.12\win\Release_AMD64_VC1916\tcl_ThreadedDynamic\ -MD'
+TCL_CFLAGS_DEBUG='-nologo -c -W3 -YX -FpD:\bld\tk_1699201897784\work\tcl8.6.13\win\Release_AMD64_VC1929\tcl_ThreadedDynamic\ -MDd'
+TCL_CFLAGS_OPTIMIZE='-nologo -c -W3 -YX -FpD:\bld\tk_1699201897784\work\tcl8.6.13\win\Release_AMD64_VC1929\tcl_ThreadedDynamic\ -MD'
 
 # Default linker flags used in an optimized and debuggable build, respectively.
 TCL_LDFLAGS_DEBUG='-nologo -machine:AMD64 -debug -debugtype:cv'
@@ -55,11 +55,11 @@ TCL_LIBS='kernel32.lib advapi32.lib netapi32.lib user32.lib userenv.lib ws2_32.l
 
 # Top-level directory in which Tcl's platform-independent files are
 # installed.
-TCL_PREFIX='C:/Users/prath/OneDrive/Desktop/ML/ETE ML PROJECT/venv\Library'
+TCL_PREFIX='d:/ML/ETE_ML_PROJECT/venv\Library'
 
 # Top-level directory in which Tcl's platform-specific files (e.g.
 # executables) are installed.
-TCL_EXEC_PREFIX='C:/Users/prath/OneDrive/Desktop/ML/ETE ML PROJECT/venv\Library\bin'
+TCL_EXEC_PREFIX='d:/ML/ETE_ML_PROJECT/venv\Library\bin'
 
 # Flags to pass to cc when compiling the components of a shared library:
 TCL_SHLIB_CFLAGS=''
@@ -115,11 +115,11 @@ TCL_BUILD_LIB_SPEC=''
 
 # String to pass to linker to pick up the Tcl library from its
 # installed directory.
-TCL_LIB_SPEC='C:/Users/prath/OneDrive/Desktop/ML/ETE ML PROJECT/venv\Library\lib\tcl86t.lib'
+TCL_LIB_SPEC='d:/ML/ETE_ML_PROJECT/venv\Library\lib\tcl86t.lib'
 
 # String to pass to the compiler so that an extension can
 # find installed Tcl headers.
-TCL_INCLUDE_SPEC='-IC:/Users/prath/OneDrive/Desktop/ML/ETE ML PROJECT/venv\Library\include'
+TCL_INCLUDE_SPEC='-Id:/ML/ETE_ML_PROJECT/venv\Library\include'
 
 # Indicates whether a version numbers should be used in -l switches
 # ("ok" means it's safe to use switches like -ltcl7.5;  "nodots" means
@@ -146,7 +146,7 @@ TCL_UNSHARED_LIB_SUFFIX='86t.lib'
 # different place than the directory containing the source files, this
 # points to the location of the sources, not the location where Tcl was
 # compiled.
-TCL_SRC_DIR='C:\ci\tk_1654036608655\work\tcl8.6.12\win\..'
+TCL_SRC_DIR='D:\bld\tk_1699201897784\work\tcl8.6.13\win\..'
 
 # List of standard directories in which to look for packages during
 # "package require" commands.  Contains the "prefix" directory plus also
@@ -164,17 +164,17 @@ TCL_STUB_LIB_FLAG='tclstub86.lib'
 
 # String to pass to linker to pick up the Tcl stub library from its
 # build directory.
-TCL_BUILD_STUB_LIB_SPEC='-LC:\ci\tk_1654036608655\work\tcl8.6.12\win\Release_AMD64_VC1916 tclstub86.lib'
+TCL_BUILD_STUB_LIB_SPEC='-LD:\bld\tk_1699201897784\work\tcl8.6.13\win\Release_AMD64_VC1929 tclstub86.lib'
 
 # String to pass to linker to pick up the Tcl stub library from its
 # installed directory.
-TCL_STUB_LIB_SPEC='-LC:/Users/prath/OneDrive/Desktop/ML/ETE ML PROJECT/venv\Library\lib tclstub86.lib'
+TCL_STUB_LIB_SPEC='-Ld:/ML/ETE_ML_PROJECT/venv\Library\lib tclstub86.lib'
 
 # Path to the Tcl stub library in the build directory.
-TCL_BUILD_STUB_LIB_PATH='C:\ci\tk_1654036608655\work\tcl8.6.12\win\Release_AMD64_VC1916\tclstub86.lib'
+TCL_BUILD_STUB_LIB_PATH='D:\bld\tk_1699201897784\work\tcl8.6.13\win\Release_AMD64_VC1929\tclstub86.lib'
 
 # Path to the Tcl stub library in the install directory.
-TCL_STUB_LIB_PATH='C:/Users/prath/OneDrive/Desktop/ML/ETE ML PROJECT/venv\Library\lib\tclstub86.lib'
+TCL_STUB_LIB_PATH='d:/ML/ETE_ML_PROJECT/venv\Library\lib\tclstub86.lib'
 
 # Flag, 1: we built Tcl with threads enabled, 0 we didn't
 TCL_THREADS=1
